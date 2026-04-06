@@ -41,18 +41,108 @@ const UserProfile = () => {
       });
       setFilteredData([]);
 
+      // Mock data with the expected structure
+      const mockUsers = [
+        {
+          FirstName: "George",
+          LastName: "Bluth",
+          Gender: "Male",
+          Email: "george.bluth@reqres.in",
+          PhoneNumber: "555-0101",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "Visa"
+        },
+        {
+          FirstName: "Janet",
+          LastName: "Weaver",
+          Gender: "Female",
+          Email: "janet.weaver@reqres.in",
+          PhoneNumber: "555-0102",
+          PaymentMethod: "Debit Card",
+          CreditCardType: "MasterCard"
+        },
+        {
+          FirstName: "Emma",
+          LastName: "Wong",
+          Gender: "Female",
+          Email: "emma.wong@reqres.in",
+          PhoneNumber: "555-0103",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "Visa"
+        },
+        {
+          FirstName: "Eve",
+          LastName: "Holt",
+          Gender: "Female",
+          Email: "eve.holt@reqres.in",
+          PhoneNumber: "555-0104",
+          PaymentMethod: "PayPal",
+          CreditCardType: "American Express"
+        },
+        {
+          FirstName: "Charles",
+          LastName: "Morris",
+          Gender: "Male",
+          Email: "charles.morris@reqres.in",
+          PhoneNumber: "555-0105",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "Discover"
+        },
+        {
+          FirstName: "Tracey",
+          LastName: "Ramos",
+          Gender: "Female",
+          Email: "tracey.ramos@reqres.in",
+          PhoneNumber: "555-0106",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "Visa"
+        },
+        {
+          FirstName: "Michael",
+          LastName: "Lawrence",
+          Gender: "Male",
+          Email: "michael.lawrence@reqres.in",
+          PhoneNumber: "555-0107",
+          PaymentMethod: "Debit Card",
+          CreditCardType: "MasterCard"
+        },
+        {
+          FirstName: "Lindsay",
+          LastName: "Ferguson",
+          Gender: "Female",
+          Email: "lindsay.ferguson@reqres.in",
+          PhoneNumber: "555-0108",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "Visa"
+        },
+        {
+          FirstName: "Tobias",
+          LastName: "Funke",
+          Gender: "Male",
+          Email: "tobias.funke@reqres.in",
+          PhoneNumber: "555-0109",
+          PaymentMethod: "Credit Card",
+          CreditCardType: "American Express"
+        },
+        {
+          FirstName: "Byron",
+          LastName: "Fields",
+          Gender: "Male",
+          Email: "byron.fields@reqres.in",
+          PhoneNumber: "555-0110",
+          PaymentMethod: "PayPal",
+          CreditCardType: "Discover"
+        }
+      ];
+
       try {
-        const request = await fetch(
-          "https://reqres.in/api/users"
-        );
-        const response = await request.json();
         setData({
           ...data,
           loading: false,
-          result: response.records.profiles,
+          result: mockUsers,
           error: null,
         });
-        setFilteredData(response.records.profiles);
+        setFilteredData(mockUsers);
       } catch (error) {
         setData({
           ...data,
