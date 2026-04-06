@@ -43,7 +43,7 @@ const UserProfile = () => {
 
       try {
         const request = await fetch(
-          "https://api.enye.tech/v1/challenge/records"
+          "https://reqres.in/api/users"
         );
         const response = await request.json();
         setData({
